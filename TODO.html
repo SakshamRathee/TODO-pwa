@@ -245,7 +245,7 @@
          </div>
 
          <script>
-                  // Load tasks & theme
+                  
                   window.onload = function () {
                            const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
                            savedTasks.forEach(t => renderTask(t.text, t.completed, t.reminderTime));
@@ -257,13 +257,11 @@
                                     document.querySelector("label[for='modeSwitch']").textContent = "☀️";
                            }
 
-                           // Register Service Worker
+                    
                            if ("serviceWorker" in navigator) {
                                     navigator.serviceWorker.register("service-worker.js");
                            }
                   };
-
-                  // Add new task
                   function addTask() {
                            const input = document.getElementById("taskInput");
                            const val = input.value.trim();
@@ -273,7 +271,6 @@
                            input.value = "";
                   }
 
-                  // Render each task
                   function renderTask(text, done, reminderTime) {
                            const li = document.createElement("li");
                            li.className = "list-group-item d-flex justify-content-between align-items-center";
